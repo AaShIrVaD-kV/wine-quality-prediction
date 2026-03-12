@@ -1,0 +1,102 @@
+/* Background gradient animation */
+
+body{
+    margin:0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(270deg,#1f1c2c,#928dab,#1f1c2c);
+    background-size:600% 600%;
+    animation: gradientFlow 15s ease infinite;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@keyframes gradientFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Glass card */
+
+.container{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:20px;
+    width:420px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    transition:0.5s;
+}
+
+.container:hover{
+    transform:scale(1.03);
+}
+
+/* Title */
+
+h1{
+    color:white;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* Inputs */
+
+input{
+    width:90%;
+    padding:12px;
+    margin:8px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+input:focus{
+    transform:scale(1.05);
+    box-shadow:0 0 10px #ffffff70;
+}
+
+/* Button */
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff6a00,#ee0979);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #ff6a00;
+}
+
+/* Prediction result */
+
+.result{
+    margin-top:20px;
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

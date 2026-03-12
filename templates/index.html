@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Wine Quality Predictor</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🍷 Wine Quality Predictor</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" step="any" name="fa" placeholder="Fixed Acidity" required>
+<input type="number" step="any" name="va" placeholder="Volatile Acidity" required>
+<input type="number" step="any" name="ca" placeholder="Citric Acid" required>
+<input type="number" step="any" name="rs" placeholder="Residual Sugar" required>
+<input type="number" step="any" name="cl" placeholder="Chlorides" required>
+<input type="number" step="any" name="fsd" placeholder="Free Sulfur Dioxide" required>
+<input type="number" step="any" name="tsd" placeholder="Total Sulfur Dioxide" required>
+<input type="number" step="any" name="den" placeholder="Density" required>
+<input type="number" step="any" name="ph" placeholder="pH" required>
+<input type="number" step="any" name="su" placeholder="Sulphates" required>
+<input type="number" step="any" name="al" placeholder="Alcohol" required>
+
+<button type="submit">Predict Quality</button>
+
+</form>
+
+{% if prediction %}
+<div class="result">
+Predicted Quality: {{ prediction }}
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
